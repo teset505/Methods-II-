@@ -1,0 +1,23 @@
+###############################
+#SEMINAR 3 PROJECT MASTER FILE#
+###############################
+
+#LOAD LIBRARIES
+library(Stargazer)
+library(tidyverse)
+
+setwd()
+
+#CLEAN DATA
+
+
+#DESCRIPTIVE STATS AND VISUALISATIONS
+
+
+
+
+#OUR MODELS
+
+
+
+#ROBUSTNESS TESTS
