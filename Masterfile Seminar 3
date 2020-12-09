@@ -8,6 +8,29 @@ library(tidyverse)
 
 setwd()
 
+#Load data 
+
+Gov <- read.csv("qog_std_cs_jan18.csv")
+
+names(Gov)
+head(Gov)
+
+#Bayesian Corruption Index, IV of interest, 0 to 100
+summary(Gov$bci_bci)
+#N= 192
+
+# (DV) Conflict Intensity,1-10: 1 there is no violent incidents, 4 there is only a few violent incidents, 7 there are violent incidents, 10 there is a civil war / wide spread violent incidents
+
+summary(Gov$bti_ci)
+#N= 128 
+
+#lets look at the bivariate relationship
+plot(Gov$bci_bci, Gov$bti_ci)
+
+#needs to be recoded so that our DV is binary between 1,0. Maybe 4 less, 0 and 4 more 1?
+
+
+
 #CLEAN DATA
 
 
