@@ -5,8 +5,9 @@
 ##LOAD LIBRARIES##
 library(Stargazer)
 library(tidyverse)
+library(ggrepel)
 
-setwd()
+#setwd()
 
 #Load data 
 #Forogh
@@ -40,6 +41,20 @@ plot(x= Gov$bci_bci,
      cex.main = 0.9)
 abline(lm(Gov$bti_ci ~ Gov$bci_bci,
                  data = Gov))
+                 
+
+p_title <- "Plot of Corruption and Conflict Intensity by Country"
+x_label <- "Bayesian Corruption Index"
+y_label <- "Conflict Intensity"
+
+p <- ggplot(Gov, aes(x = bci_bci, y= bti_ci,label=cname))+ 
+   geom_point() +
+  geom_text_repel(aes(label =cname),
+  hjust=0, vjust=0,
+                  size=3)
+p + labs(x = x_label, y = y_label, title = p_title)                  
+
+
 
    
 #controls, Tami
