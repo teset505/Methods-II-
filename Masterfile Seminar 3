@@ -52,7 +52,10 @@ p <- ggplot(Gov, aes(x = bci_bci, y= bti_ci,label=cname))+
   geom_text_repel(aes(label =cname),
   hjust=0, vjust=0,
                   size=3)
-p + labs(x = x_label, y = y_label, title = p_title)                  
+p + labs(x = x_label, y = y_label, title = p_title) + geom_smooth(method = "lm", se =FALSE)
+
+abline(lm(Gov$bti_ci ~ Gov$bci_bci,
+          data = Gov))
 
 
 
