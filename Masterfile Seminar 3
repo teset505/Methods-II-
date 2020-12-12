@@ -31,14 +31,15 @@ plot(Gov$bci_bci, Gov$ConflictD)
 
 cor.test(Gov$bci_bci,Gov$bti_ci, na.rm=T)
 
-
 plot(x= Gov$bci_bci,
      y= Gov$bti_ci,
-     main= "Plot of BCI on conflict intensity",
+     main= "Figure 4.1: OLS Model 1",
      xlab= "Bayesian Corruption Indicator",
      ylab= "Conflict Intensity",
      pch= 20,
      cex.main = 0.9)
+abline(lm(Gov$bti_ci ~ Gov$bci_bci,
+                 data = Gov))
 
    
 #controls, Tami
